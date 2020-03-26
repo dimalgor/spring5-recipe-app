@@ -96,7 +96,6 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         Notes guacNotes = new Notes();
         guacNotes.setRecipeNotes("For a very quick guacamole just take a 1/4 cup of salsa and mix it in with your mashed avocados.");
-        guacNotes.setRecipe(guacRecipe);
         guacRecipe.setNotes(guacNotes);
 
         Ingredient ingredient1 = new Ingredient();
@@ -104,56 +103,56 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         ingredient1.setAmount(2);
         ingredient1.setUof(eachUOM);
         ingredient1.setRecipe(guacRecipe);
-        guacRecipe.getIngredients().add(ingredient1);
+        guacRecipe.addIngredient(ingredient1);
 
         Ingredient ingredient2 = new Ingredient();
         ingredient2.setDescription("Kosher salt");
         ingredient2.setAmount(5);
         ingredient2.setRecipe(guacRecipe);
         ingredient2.setUof(teaspoonUOM);
-        guacRecipe.getIngredients().add(ingredient2);
+        guacRecipe.addIngredient(ingredient2);
 
         Ingredient ingredient3 = new Ingredient();
         ingredient3.setDescription("Fresh lime juice or lemon juice");
         ingredient3.setAmount(2);
         ingredient3.setUof(tablespoonUOM);
         ingredient3.setRecipe(guacRecipe);
-        guacRecipe.getIngredients().add(ingredient3);
+        guacRecipe.addIngredient(ingredient3);
 
         Ingredient ingredient4 = new Ingredient();
         ingredient4.setDescription("Minced red onion or thinly sliced green onion");
         ingredient4.setAmount(2);
         ingredient4.setUof(tablespoonUOM);
         ingredient4.setRecipe(guacRecipe);
-        guacRecipe.getIngredients().add(ingredient4);
+        guacRecipe.addIngredient(ingredient4);
 
         Ingredient ingredient5 = new Ingredient();
         ingredient5.setDescription("serrano chiles, steams and seeds removed, minced");
         ingredient5.setAmount(2);
         ingredient5.setUof(eachUOM);
         ingredient5.setRecipe(guacRecipe);
-        guacRecipe.getIngredients().add(ingredient5);
+        guacRecipe.addIngredient(ingredient5);
 
         Ingredient ingredient6 = new Ingredient();
         ingredient6.setDescription("Cilantro");
         ingredient6.setAmount(2);
         ingredient6.setUof(tablespoonUOM);
         ingredient6.setRecipe(guacRecipe);
-        guacRecipe.getIngredients().add(ingredient6);
+        guacRecipe.addIngredient(ingredient6);
 
         Ingredient ingredient7 = new Ingredient();
         ingredient7.setDescription("Freshly grated black pepper");
         ingredient7.setAmount(2);
         ingredient7.setUof(dashUOM);
         ingredient7.setRecipe(guacRecipe);
-        guacRecipe.getIngredients().add(ingredient7);
+        guacRecipe.addIngredient(ingredient7);
 
         Ingredient ingredient8 = new Ingredient();
         ingredient8.setDescription("Ripe tomato, seeds and pulp removed, chopped");
         ingredient8.setAmount(2);
         ingredient8.setUof(eachUOM);
         ingredient8.setRecipe(guacRecipe);
-        guacRecipe.getIngredients().add(ingredient8);
+        guacRecipe.addIngredient(ingredient8);
 
         guacRecipe.getCategories().add(americanCategory);
         guacRecipe.getCategories().add(mexicanCategory);
@@ -186,7 +185,6 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         tacNotes.setRecipeNotes("We have a family motto and it is this: Everything goes better in a tortilla.\n" +
                 "\n" +
                 "Any and every kind of leftover can go inside a warm tortilla, usually with a healthy dose of pickled jalapenos. I can always sniff out a late-night snacker when the aroma of tortillas heating in a hot pan on the stove comes wafting through the house.\n");
-        tacNotes.setRecipe(tacosRecipe);
         tacosRecipe.setNotes(tacNotes);
 
 
@@ -195,21 +193,21 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         tacoIngr1.setAmount(2);
         tacoIngr1.setUof(tablespoonUOM);
         tacoIngr1.setRecipe(tacosRecipe);
-        tacosRecipe.getIngredients().add(tacoIngr1);
+        tacosRecipe.addIngredient(tacoIngr1);
 
         Ingredient tacoIngr2 = new Ingredient();
         tacoIngr2.setDescription("Dried oregano");
         tacoIngr2.setAmount(1);
         tacoIngr2.setUof(teaspoonUOM);
         tacoIngr2.setRecipe(tacosRecipe);
-        tacosRecipe.getIngredients().add(tacoIngr2);
+        tacosRecipe.addIngredient(tacoIngr2);
 
         Ingredient tacoIngr3 = new Ingredient();
         tacoIngr3.setDescription("Dried cumin");
         tacoIngr3.setAmount(1);
         tacoIngr3.setUof(teaspoonUOM);
         tacoIngr3.setRecipe(tacosRecipe);
-        tacosRecipe.getIngredients().add(tacoIngr3);
+        tacosRecipe.addIngredient(tacoIngr3);
 
         tacosRecipe.getCategories().add(americanCategory);
         tacosRecipe.getCategories().add(mexicanCategory);
