@@ -1,15 +1,15 @@
 package guru.springframework.damain;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Entity
 public class Ingredient {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
-    private BigDecimal amount;
+    private int amount;
 
     @OneToOne(fetch = FetchType.EAGER)
     private UnitOfMeasure uof;
@@ -33,11 +33,11 @@ public class Ingredient {
         this.description = description;
     }
 
-    public BigDecimal getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
