@@ -17,7 +17,7 @@ public class Ingredient {
     private int amount;
 
     @OneToOne(fetch = FetchType.EAGER)
-    private UnitOfMeasure uof;
+    private UnitOfMeasure uom;
 
     @ManyToOne
     private Recipe recipe;
