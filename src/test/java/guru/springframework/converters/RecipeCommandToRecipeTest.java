@@ -7,7 +7,6 @@ import guru.springframework.commands.RecipeCommand;
 import guru.springframework.domain.Difficulty;
 import guru.springframework.domain.Recipe;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -43,7 +42,6 @@ public class RecipeCommandToRecipeTest {
         assertNull(converter.convert(null));
     }
 
-    @Ignore
     @Test
     public void testEmptyObject() throws Exception {
         assertNotNull(converter.convert(new RecipeCommand()));

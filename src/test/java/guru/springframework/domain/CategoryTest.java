@@ -21,10 +21,10 @@ public class CategoryTest {
     }
 
     @Test
-    public void getDescription() {
+    public void getDescription() throws Exception {
     }
 
     @Test
-    public void getRecipes() {
+    public void getRecipes() throws Exception {
     }
 }
