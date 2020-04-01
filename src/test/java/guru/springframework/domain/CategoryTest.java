@@ -1,4 +1,4 @@
-package guru.springframework.damain;
+package guru.springframework.domain;
 
 import org.junit.Before;
 import org.junit.Test;

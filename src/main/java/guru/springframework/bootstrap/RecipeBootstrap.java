@@ -1,6 +1,6 @@
 package guru.springframework.bootstrap;
 
-import guru.springframework.damain.*;
+import guru.springframework.domain.*;
 import guru.springframework.repositories.CategoryRepository;
 import guru.springframework.repositories.RecipeRepository;
 import guru.springframework.repositories.UnitOfMeasureRepository;
@@ -10,6 +10,7 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -97,7 +98,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacRecipe.setPrepTime(10);
         guacRecipe.setCookTime(0);
         guacRecipe.setDifficulty(Difficulty.EASY);
-        guacRecipe.setDirection("1 Cut the avocado, remove flesh: Cut the avocados in half. Remove the pit. Score the inside of the avocado with a blunt knife and scoop out the flesh with a spoon. (See How to Cut and Peel an Avocado.) Place in a bowl.");
+        guacRecipe.setDirections("1 Cut the avocado, remove flesh: Cut the avocados in half. Remove the pit. Score the inside of the avocado with a blunt knife and scoop out the flesh with a spoon. (See How to Cut and Peel an Avocado.) Place in a bowl.");
 
         Notes guacNotes = new Notes();
         guacNotes.setRecipeNotes("For a very quick guacamole just take a 1/4 cup of salsa and mix it in with your mashed avocados.");
@@ -105,56 +106,56 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         Ingredient ingredient1 = new Ingredient();
         ingredient1.setDescription("ripe avocados");
-        ingredient1.setAmount(2);
+        ingredient1.setAmount(new BigDecimal("2.0"));
         ingredient1.setUom(eachUOM);
         ingredient1.setRecipe(guacRecipe);
         guacRecipe.addIngredient(ingredient1);
 
         Ingredient ingredient2 = new Ingredient();
         ingredient2.setDescription("Kosher salt");
-        ingredient2.setAmount(5);
+        ingredient2.setAmount(BigDecimal.ONE);
         ingredient2.setRecipe(guacRecipe);
         ingredient2.setUom(teaspoonUOM);
         guacRecipe.addIngredient(ingredient2);
 
         Ingredient ingredient3 = new Ingredient();
         ingredient3.setDescription("Fresh lime juice or lemon juice");
-        ingredient3.setAmount(2);
+        ingredient3.setAmount(BigDecimal.TEN);
         ingredient3.setUom(tablespoonUOM);
         ingredient3.setRecipe(guacRecipe);
         guacRecipe.addIngredient(ingredient3);
 
         Ingredient ingredient4 = new Ingredient();
         ingredient4.setDescription("Minced red onion or thinly sliced green onion");
-        ingredient4.setAmount(2);
+        ingredient4.setAmount(new BigDecimal("2.0"));
         ingredient4.setUom(tablespoonUOM);
         ingredient4.setRecipe(guacRecipe);
         guacRecipe.addIngredient(ingredient4);
 
         Ingredient ingredient5 = new Ingredient();
         ingredient5.setDescription("serrano chiles, steams and seeds removed, minced");
-        ingredient5.setAmount(2);
+        ingredient5.setAmount(new BigDecimal("2.0"));
         ingredient5.setUom(eachUOM);
         ingredient5.setRecipe(guacRecipe);
         guacRecipe.addIngredient(ingredient5);
 
         Ingredient ingredient6 = new Ingredient();
         ingredient6.setDescription("Cilantro");
-        ingredient6.setAmount(2);
+        ingredient6.setAmount(new BigDecimal("2.0"));
         ingredient6.setUom(tablespoonUOM);
         ingredient6.setRecipe(guacRecipe);
         guacRecipe.addIngredient(ingredient6);
 
         Ingredient ingredient7 = new Ingredient();
         ingredient7.setDescription("Freshly grated black pepper");
-        ingredient7.setAmount(2);
+        ingredient7.setAmount(new BigDecimal("2.0"));
         ingredient7.setUom(dashUOM);
         ingredient7.setRecipe(guacRecipe);
         guacRecipe.addIngredient(ingredient7);
 
         Ingredient ingredient8 = new Ingredient();
         ingredient8.setDescription("Ripe tomato, seeds and pulp removed, chopped");
-        ingredient8.setAmount(2);
+        ingredient8.setAmount(new BigDecimal("2.0"));
         ingredient8.setUom(eachUOM);
         ingredient8.setRecipe(guacRecipe);
         guacRecipe.addIngredient(ingredient8);
@@ -174,7 +175,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         tacosRecipe.setCookTime(9);
         tacosRecipe.setPrepTime(20);
         tacosRecipe.setDifficulty(Difficulty.MODERATE);
-        tacosRecipe.setDirection("1 Prepare a gas or charcoal grill for medium-high, direct heat.\n" +
+        tacosRecipe.setDirections("1 Prepare a gas or charcoal grill for medium-high, direct heat.\n" +
                 "\n" +
                 "2 Make the marinade and coat the chicken: In a large bowl, stir together the chili powder, oregano, cumin, sugar, salt, garlic and orange zest. Stir in the orange juice and olive oil to make a loose paste. Add the chicken to the bowl and toss to coat all over.\n" +
                 "\n" +
@@ -198,21 +199,21 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         Ingredient tacoIngr1 = new Ingredient();
         tacoIngr1.setDescription("Ancho chili powder");
-        tacoIngr1.setAmount(2);
+        tacoIngr1.setAmount(new BigDecimal("2.0"));
         tacoIngr1.setUom(tablespoonUOM);
         tacoIngr1.setRecipe(tacosRecipe);
         tacosRecipe.addIngredient(tacoIngr1);
 
         Ingredient tacoIngr2 = new Ingredient();
         tacoIngr2.setDescription("Dried oregano");
-        tacoIngr2.setAmount(1);
+        tacoIngr2.setAmount(new BigDecimal("1.0"));
         tacoIngr2.setUom(teaspoonUOM);
         tacoIngr2.setRecipe(tacosRecipe);
         tacosRecipe.addIngredient(tacoIngr2);
 
         Ingredient tacoIngr3 = new Ingredient();
         tacoIngr3.setDescription("Dried cumin");
-        tacoIngr3.setAmount(1);
+        tacoIngr3.setAmount(new BigDecimal("1.0"));
         tacoIngr3.setUom(teaspoonUOM);
         tacoIngr3.setRecipe(tacosRecipe);
         tacosRecipe.addIngredient(tacoIngr3);

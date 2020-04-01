@@ -1,4 +1,4 @@
-package guru.springframework.damain;
+package guru.springframework.domain;
 
 import lombok.Data;
 
@@ -20,7 +20,7 @@ public class Recipe {
     private String source;
     private String url;
     @Lob
-    private String direction;
+    private String directions;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
     private Set<Ingredient> ingredients = new HashSet<>();
