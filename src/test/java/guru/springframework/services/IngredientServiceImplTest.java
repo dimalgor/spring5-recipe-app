@@ -110,7 +110,7 @@ public class IngredientServiceImplTest {
     }
 
     @Test
-    public void deleteById() throws Exception{
+    public void testDeleteById() throws Exception {
         //given
         Recipe recipe = new Recipe();
         Ingredient ingredient = new Ingredient();
@@ -127,6 +127,5 @@ public class IngredientServiceImplTest {
         //then
         verify(recipeRepository, times(1)).findById(anyLong());
         verify(recipeRepository, times(1)).save(any(Recipe.class));
-
     }
 }
